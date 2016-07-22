@@ -1,10 +1,20 @@
-%h5= @hero.name
+#hero_stats
+  %h5 Name: #{@hero.name}
+  %h6 Hometown: #{@hero.hometown}
+
 - if @most_recent
   .most_recent
     %h5 Most recently stopped crime
-    %ul
+    %ul#last_crime
       %li Crime Prevented: #{@most_recent.crime}
+      %li Criminal: #{@most_recent.criminal}
       %li Life Saved: #{@most_recent.potential_victim}
       %li Location: #{@most_recent.location}
+
+%h5 Crimes prevented by this hero
+%ul#crime_stats
+  - @hero.stopped_crimes.each do |stopped_crime|
+    %li
+      = link_to stopped_crime.crime, admin_stopped_crime_path(stopped_crime)
 
 = link_to 'Destroy this hero', admin_hero_path(@hero), method: :delete

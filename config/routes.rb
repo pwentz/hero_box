@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :stopped_crimes, only: [:create, :new, :show, :destroy, :index]
     resources :heros
+      resources :stopped_crimes, only: [:show, :destroy, :new, :create]
+    resources :stopped_crimes, only: [:index]
   end
 
   get '/login' => 'sessions#new'
