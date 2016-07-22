@@ -1,0 +1,21 @@
+%h5 Create new crime prevention record
+
+= form_for [:admin, @stopped_crime] do |f|
+  = f.label :crime
+  = f.text_field :crime
+  %br/
+  = f.label :criminal
+  = f.text_field :criminal
+  %br/
+  = f.label :potential_victim
+  = f.text_field :potential_victim
+  %br/
+  = f.label :location
+  = f.text_field :location
+  %br/
+  %h5 Hero
+  %br/
+  - Hero.all.each do |hero|
+    = check_box_tag :hero, hero.id, false, :name => 'stopped_crime[hero_id]', :id => "hero_#{hero.id}"
+  %br/
+  = f.submit 'Create stopped crime record'
