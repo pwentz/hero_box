@@ -26,7 +26,6 @@ describe 'Admin can see hero page', :type => :feature do
 
     visit admin_hero_path(hero)
 
-    save_and_open_page
     within("#crime_stats") do
       expect(page).to have_link(stopped_crime.crime)
     end
