@@ -1,3 +1,10 @@
-%h5 Welcome, Admin
+%h5= @hero.name
+- if @most_recent
+  .most_recent
+    %h5 Most recently stopped crime
+    %ul
+      %li Crime Prevented: #{@most_recent.crime}
+      %li Life Saved: #{@most_recent.potential_victim}
+      %li Location: #{@most_recent.location}
 
-= link_to 'View all heroes', admin_heros_path(current_hero)
+= link_to 'Destroy this hero', admin_hero_path(@hero), method: :delete
