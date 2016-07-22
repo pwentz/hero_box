@@ -35,6 +35,6 @@ class Admin::HerosController < ApplicationController
   end
 
   def hero_params
-    params.require(:hero).permit(:name, :hometown, :password)
+    params.require(:hero).permit(:name, :hometown, :password, :stopped_crime_ids => [])
   end
 end

@@ -10,12 +10,18 @@
   = f.label :password
   = f.password_field :password
   %br/
+  %h5 Role
+  %br/
   = check_box_tag @hero.role, 0, true, :name => "hero[role]"
   hero
   %br/
   = check_box_tag @hero.role, 1, false, :name => "hero[role]"
   admin
   %br/
-  = f.collection_select :stopped_crimes, StoppedCrime.all, :id, :crime
+  %h5 Select stopped crimes
   %br/
+  - StoppedCrime.all.each do |stopped_crime|
+    = check_box_tag :stopped_crimes, stopped_crime.id, false, :name => "hero[stopped_crime_ids][]", :id => "stopped_crime_#{stopped_crime.id}"
+    = stopped_crime.crime
+    %br/
   = f.submit

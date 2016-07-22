@@ -1,0 +1,8 @@
+%h5 All Prevented Crimes
+
+%ul#crimes_list
+  - StoppedCrime.all.each do |stopped_crime|
+    %li
+      = link_to stopped_crime.crime, admin_stopped_crime_path(stopped_crime)
+
+= link_to 'Create new crime prevention record', new_admin_stopped_crime_path(current_hero)

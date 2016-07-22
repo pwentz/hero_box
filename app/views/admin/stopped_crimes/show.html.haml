@@ -1,0 +1,9 @@
+%h5= @stopped_crime.crime
+
+%ul#crime_details
+  %li Criminal: #{@stopped_crime.criminal} 
+  %li Potential Victim: #{@stopped_crime.potential_victim} 
+  %li Location: #{@stopped_crime.location} 
+  %li Crime Prevented By: #{link_to @stopped_crime.hero.name, hero_path(@stopped_crime.hero)}
+
+= link_to 'Destroy this record', admin_stopped_crime_path(@stopped_crime), :method => :delete 

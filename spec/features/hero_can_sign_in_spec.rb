@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Hero signs in" do
+describe "Hero signs in", :type => :feature do
   context "with valid login" do
     scenario "they get redirected to their dashboard" do
       hero = create(:hero)
