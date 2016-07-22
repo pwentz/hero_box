@@ -1,0 +1,13 @@
+%h5 Create a new hero
+
+= form_for [:admin, @hero] do |f|
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :hometown
+  = f.text_field :hometown
+  %br/
+  = f.label :password
+  = f.password_field :password
+  %br/
+  = f.submit
