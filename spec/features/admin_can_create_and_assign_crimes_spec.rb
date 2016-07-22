@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Admin can create and assign stopped crimes" do
   scenario "they are taken to the page of the hero they assigned" do
+    pending
     admin = create(:hero, :role => 1)
     hero_one, hero_two = create_list(:hero, 2)
     victim_name = Faker::Name.name

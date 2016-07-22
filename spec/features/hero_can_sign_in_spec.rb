@@ -13,6 +13,11 @@ describe "Hero signs in" do
       within(".flash_success") do
         expect(page).to have_text("Welcome #{hero.name}")
       end
+
+      within(".login") do
+        expect(page).to have_content('logout')
+        expect(page).not_to have_content('login')
+      end
     end
   end
 end

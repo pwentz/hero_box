@@ -1,0 +1,6 @@
+%h5 Your stopped crimes
+
+%ul#stopped_crimes_list
+  - current_hero.stopped_crimes.each do |stopped_crime|
+    %li
+      = link_to stopped_crime.crime, hero_stopped_crime_path(current_hero, stopped_crime)

@@ -8,9 +8,7 @@ describe "Admin can see all heroes" do
       ApplicationController
     ).to receive(:current_hero).and_return(admin)
 
-    visit admin_hero_path(admin)
-
-    click_link 'View all heroes'
+    visit admin_heros_path(admin)
 
     within("#heroes_list") do
       expect(page).to have_link(hero_one.name)
