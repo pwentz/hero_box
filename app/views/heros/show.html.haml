@@ -1,0 +1,9 @@
+%h5 Hero Homepage
+
+- if @most_recent
+  .most_recent
+    %h5 Here's your most recently stopped crime
+    %ul
+      %li Crime Prevented: #{@most_recent.crime}
+      %li Life Saved: #{@most_recent.potential_victim}
+      %li Location: #{@most_recent.location}
