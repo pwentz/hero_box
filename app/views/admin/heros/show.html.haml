@@ -2,6 +2,9 @@
   %h5 Name: #{@hero.name}
   %h6 Hometown: #{@hero.hometown}
 
+.avatar
+  = image_tag(@hero.image_url)
+
 - if @most_recent
   .most_recent
     %h5 Most recently stopped crime

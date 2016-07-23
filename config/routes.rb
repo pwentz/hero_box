@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :heros
-      resources :stopped_crimes, only: [:show, :destroy, :new, :create]
-    resources :stopped_crimes, only: [:index]
+    resources :powers, except: [:index]
+    resources :stopped_crimes, except: [:update, :edit]
   end
 
   resources :powers, only: [:index, :show]

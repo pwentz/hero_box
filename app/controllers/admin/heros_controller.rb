@@ -22,7 +22,7 @@ class Admin::HerosController < ApplicationController
     @hero.role = hero_params[:role].to_i
     if @hero.save
       flash[:success] = "Hero created!"
-      redirect_to admin_heros_path(current_hero)
+      redirect_to admin_heros_path
     else
       flash[:danger] = "Invalid credentials"
       render :new
@@ -35,6 +35,6 @@ class Admin::HerosController < ApplicationController
   end
 
   def hero_params
-    params.require(:hero).permit(:name, :hometown, :password, :stopped_crime_ids => [])
+    params.require(:hero).permit(:name, :hometown, :password, :image_url, :stopped_crime_ids => [])
   end
 end

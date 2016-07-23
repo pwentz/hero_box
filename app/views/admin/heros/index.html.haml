@@ -4,4 +4,5 @@
   - Hero.where(:role => 0).each do |hero|
     = link_to hero.name, admin_hero_path(hero)
 
-= link_to 'Create new hero', new_admin_hero_path(current_hero)
+= link_to 'Create new hero', new_admin_hero_path
+= link_to 'Create Power', new_admin_power_path
