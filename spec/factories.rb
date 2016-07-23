@@ -15,4 +15,13 @@ FactoryGirl.define do
     role 0
   end
 
+  factory :power do
+    name { Faker::Superhero.power }
+    cost 
+    image_url { Faker::Avatar.image }
+  end
+
+  sequence :cost do |n|
+    n + 5
+  end
 end

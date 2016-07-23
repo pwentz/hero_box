@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :stopped_crimes, only: [:index]
   end
 
+  resources :powers, only: [:index, :show]
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'

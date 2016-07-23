@@ -1,0 +1,8 @@
+%h5 Potential Powers
+
+#powers_list
+  - Power.all.each do |power|
+    = link_to power.name, power_path(power)
+    %p
+      = power.cost
+      stopped crimes

@@ -11,16 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722131559) do
+ActiveRecord::Schema.define(version: 20160722191311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hero_powers", force: :cascade do |t|
+    t.integer "hero_id"
+    t.integer "power_id"
+  end
+
+  add_index "hero_powers", ["hero_id"], name: "index_hero_powers_on_hero_id", using: :btree
+  add_index "hero_powers", ["power_id"], name: "index_hero_powers_on_power_id", using: :btree
 
   create_table "heros", force: :cascade do |t|
     t.string  "name"
     t.string  "hometown"
     t.string  "password_digest"
     t.integer "role"
+  end
+
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
+    t.string "cost"
+    t.string "image_url"
   end
 
   create_table "stopped_crimes", force: :cascade do |t|
@@ -35,5 +49,7 @@ ActiveRecord::Schema.define(version: 20160722131559) do
 
   add_index "stopped_crimes", ["hero_id"], name: "index_stopped_crimes_on_hero_id", using: :btree
 
+  add_foreign_key "hero_powers", "heros"
+  add_foreign_key "hero_powers", "powers"
   add_foreign_key "stopped_crimes", "heros"
 end
