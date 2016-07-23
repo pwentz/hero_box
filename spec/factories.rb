@@ -6,6 +6,7 @@ FactoryGirl.define do
     crime { Faker::Hacker.ingverb }
     criminal { Faker::Book.author }
     hero
+    role 0
   end
 
   factory :hero do
