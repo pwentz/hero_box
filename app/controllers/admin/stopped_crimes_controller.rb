@@ -1,4 +1,4 @@
-class Admin::StoppedCrimesController < ApplicationController
+class Admin::StoppedCrimesController < Admin::BaseController
   before_action :set_stopped_crime, only: [:show, :destroy]
   def new
     @stopped_crime = StoppedCrime.new

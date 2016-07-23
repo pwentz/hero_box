@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :stopped_crime do
     potential_victim { Faker::Name.name }
     location { Faker::Address.city }
-    crime { Faker::Hacker.ingverb }
+    crime { Faker::Hipster.sentence(rand(1..5)) }
     criminal { Faker::Book.author }
     hero
     role 0

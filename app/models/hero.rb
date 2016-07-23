@@ -10,11 +10,7 @@ class Hero < ActiveRecord::Base
   enum role: %w(default admin)
 
   def assign_avatar
-    self.image_url ||= robot_hero
-  end
-
-  def robot_hero
-    Faker::Avatar.image("150x150")
+    self.image_url ||= Faker::Avatar.image("150x150")
   end
 
   def add_power(power)
