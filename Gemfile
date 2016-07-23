@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'faker'
 gem 'pry-rails'
 gem 'haml'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -43,7 +44,6 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'faker'
 end
 
 group :development do

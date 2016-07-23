@@ -13,7 +13,6 @@ FactoryGirl.define do
     name { Faker::Superhero.name }
     hometown { Faker::Address.city }
     password { Faker::Internet.password }
-    image_url { Faker::Avatar.image }
     role 0
   end
 

@@ -55,4 +55,18 @@ describe 'Hero can redeem stopped crimes for powers' do
       end
     end
   end
+
+  context 'they have less stopped crimes than the cost of power' do
+    scenario 'they cannot see the purchase power button' do
+      hero = create(:hero)
+      power = create(:power, :cost => 1)
+      allow_any_instance_of(
+        ApplicationController
+      ).to receive(:current_hero).and_return(hero)
+
+      visit power_path(power)
+
+      expect(page).not_to have_link('Purchase power')
+    end
+  end
 end
