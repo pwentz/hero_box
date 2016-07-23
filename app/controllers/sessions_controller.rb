@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if hero && hero.authenticate(params[:session][:password])
       session[:hero_id] = hero.id
       flash[:success] = "Welcome #{hero.name}"
-      redirect_to hero_path(hero)
+      redirect_to hero_stopped_crimes_path(hero)
     else
       flash[:danger] = "Invalid credentials"
       render :new
