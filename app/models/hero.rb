@@ -5,9 +5,17 @@ class Hero < ActiveRecord::Base
   has_many :powers, through: :hero_powers
   validates :name, presence: true, uniqueness: true
   validates :hometown, presence: true
-  validates :image_url, presence: true
+  after_initialize :assign_avatar
 
   enum role: %w(default admin)
+
+  def assign_avatar
+    self.image_url ||= robot_hero
+  end
+
+  def robot_hero
+    Faker::Avatar.image("150x150")
+  end
 
   def add_power(power)
     powers << power
