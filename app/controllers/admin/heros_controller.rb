@@ -1,5 +1,5 @@
 class Admin::HerosController < ApplicationController
-  before_action :set_hero, only: [:show, :destroy]
+  before_action :set_hero, only: [:show, :destroy, :edit, :update]
   def show
     @most_recent = @hero.stopped_crimes.last unless @hero.stopped_crimes.empty?
   end
@@ -26,6 +26,19 @@ class Admin::HerosController < ApplicationController
     else
       flash[:danger] = "Invalid credentials"
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @hero.update(hero_params)
+      flash[:success] = "Hero updated!"
+      redirect_to admin_hero_path(@hero)
+    else
+      #ActiveRecord warning
+      render :edit
     end
   end
 

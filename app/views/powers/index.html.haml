@@ -2,7 +2,10 @@
 
 #powers_list
   - Power.all.each do |power|
-    = link_to power.name, power_path(power)
+    - if current_admin?
+      = link_to power.name, admin_power_path(power)
+    - else
+      = link_to power.name, power_path(power)
     %p
       = power.cost
       stopped crimes

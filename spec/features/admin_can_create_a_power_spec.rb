@@ -26,7 +26,6 @@ describe 'Admin can create power', :type => :feature do
     existing_power = create(:power)
     power_name = Faker::Superhero.power
     power_cost = 50
-    power_iamge = Faker::Avatar.image
     allow_any_instance_of(
       ApplicationController
     ).to receive(:current_hero).and_return(admin)
@@ -36,7 +35,6 @@ describe 'Admin can create power', :type => :feature do
     within(".new_power") do
       fill_in "power[name]", with: power_name
       fill_in "power[cost]", with: power_cost
-
       click_button 'Create Power'
     end
 

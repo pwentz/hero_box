@@ -1,0 +1,30 @@
+= form_for [:admin, @hero] do |f|
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :hometown
+  = f.text_field :hometown
+  %br/
+  = f.label :password
+  = f.password_field :password
+  %br/
+  = f.label :image_url
+  = f.text_field :image_url
+  %h5 Role
+  %br/
+  = check_box_tag @hero.role, 0, true, :name => "hero[role]"
+  hero
+  %br/
+  = check_box_tag @hero.role, 1, false, :name => "hero[role]"
+  admin
+  %br/
+  %h5 Select stopped crimes
+  %br/
+  - StoppedCrime.all.each do |stopped_crime|
+    - if @hero.stopped_crimes.exists?(stopped_crime)
+      = check_box_tag :stopped_crimes, stopped_crime.id, true, :name => "hero[stopped_crime_ids][]", :id => "stopped_crime_#{stopped_crime.id}"
+    - else
+      = check_box_tag :stopped_crimes, stopped_crime.id, false, :name => "hero[stopped_crime_ids][]", :id => "stopped_crime_#{stopped_crime.id}"
+    = stopped_crime.crime
+    %br/
+  = f.submit
