@@ -1,4 +1,7 @@
 = link_to 'Potential Powers', powers_path
+- if @recent_power
+  .most_recent_power
+    %h5 Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
 %h5 Your stopped crimes
 
 %ul#stopped_crimes_list

@@ -8,4 +8,8 @@ class Hero < ActiveRecord::Base
   validates :image_url, presence: true
 
   enum role: %w(default admin)
+
+  def add_power(power)
+    powers << power
+  end
 end
