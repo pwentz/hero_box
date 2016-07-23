@@ -12,13 +12,13 @@ FactoryGirl.define do
     name { Faker::Superhero.name }
     hometown { Faker::Address.city }
     password { Faker::Internet.password }
+    image_url { Faker::Avatar.image }
     role 0
   end
 
   factory :power do
     name { Faker::Superhero.power }
     cost 
-    image_url { Faker::Avatar.image }
   end
 
   sequence :cost do |n|

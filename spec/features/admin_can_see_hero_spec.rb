@@ -13,8 +13,9 @@ describe 'Admin can see hero page', :type => :feature do
 
     within("#hero_stats") do
       expect(page).to have_text(hero.name)
-      expect(page).to have_text(hero.hometown)
     end
+
+    expect(page.find(".avatar")).to have_css("img[src=\"#{hero.image_url}\"]")
   end
   scenario 'they can find links to stopped crimes by hero' do
     admin = create(:hero, :role => 1)

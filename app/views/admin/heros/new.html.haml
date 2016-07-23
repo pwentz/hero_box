@@ -10,6 +10,8 @@
   = f.label :password
   = f.password_field :password
   %br/
+  = f.label :image_url
+  = f.text_field :image_url
   %h5 Role
   %br/
   = check_box_tag @hero.role, 0, true, :name => "hero[role]"
