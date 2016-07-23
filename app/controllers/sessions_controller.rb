@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
   def new
   end
 
@@ -12,5 +13,11 @@ class SessionsController < ApplicationController
       flash[:danger] = "Invalid credentials"
       render :new
     end
+  end
+
+  def destroy
+    session.clear
+    flash[:success] = "Successfully logged out!"
+    redirect_to root_path
   end
 end
