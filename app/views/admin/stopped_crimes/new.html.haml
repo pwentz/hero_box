@@ -1,6 +1,7 @@
 %h5 Create new crime prevention record
 
 = form_for [:admin, @stopped_crime] do |f|
+  = render partial: 'shared/errors', locals: {:target => @stopped_crime}
   = f.label :crime
   = f.text_field :crime
   %br/
