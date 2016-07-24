@@ -7,7 +7,7 @@ require 'rails_helper'
 # with any other existing heros
 
 describe 'Admin can create a hero' do
-  context 'with valid credentials' do
+  context 'with valid credentials and default image' do
     scenario 'they create hero and redirected to hero index' do
       admin = create(:hero, :role => 1)
       existing_hero = create(:hero)
@@ -32,6 +32,28 @@ describe 'Admin can create a hero' do
       within("#heroes_list") do
         expect(page).to have_link(existing_hero.name)
         expect(page).to have_link('Bill')
+      end
+    end
+  end
+
+  context 'with valid credentials and NO image' do
+    scenario 'they create a hero with a robot default image' do
+      admin = create(:hero, :role => 1)
+      allow_any_instance_of(
+        ApplicationController
+      ).to receive(:current_hero).and_return(admin)
+
+      visit new_admin_hero_path
+
+      within(".new_hero") do
+        fill_in 'hero[name]', with: 'Bill'
+        fill_in 'hero[hometown]', with: 'Pallet Town'
+        fill_in 'hero[password]', with: 'password'
+        click_button 'Create Hero'
+      end
+
+      within("#heroes_list") do
+        expect(page).to have_css("img[src=\"#{Hero.last.image_url}\"]")
       end
     end
   end

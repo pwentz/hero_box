@@ -12,4 +12,9 @@ class StoppedCrime < ActiveRecord::Base
     end
     all.first.hero.add_power(power)
   end
+
+  before_create do
+    self.role = 0
+  end
+
 end

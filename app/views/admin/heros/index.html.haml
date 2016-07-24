@@ -2,6 +2,7 @@
 
 %ul#heroes_list
   - Hero.where(:role => 0).each do |hero|
+    = image_tag(hero.image_url)
     = link_to hero.name, admin_hero_path(hero)
 
 = link_to 'Create new hero', new_admin_hero_path
