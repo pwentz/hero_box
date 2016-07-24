@@ -1,5 +1,6 @@
 class StoppedCrime < ActiveRecord::Base
   belongs_to :hero
+  validates :crime, presence: true
   validates :potential_victim, presence: true
   validates :location, presence: true
 
@@ -11,4 +12,9 @@ class StoppedCrime < ActiveRecord::Base
     end
     all.first.hero.add_power(power)
   end
+
+  before_create do
+    self.role = 0
+  end
+
 end

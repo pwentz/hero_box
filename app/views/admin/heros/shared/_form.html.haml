@@ -1,4 +1,5 @@
 = form_for [:admin, @hero] do |f|
+  = render partial: '/shared/errors', locals: {:target => @hero}
   = f.label :name
   = f.text_field :name
   %br/

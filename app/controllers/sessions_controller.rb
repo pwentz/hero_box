@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   def new
+    redirect_to hero_stopped_crimes_path(current_hero) if current_hero
   end
 
   def create
