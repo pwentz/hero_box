@@ -29,6 +29,5 @@ describe 'Admin can see individual powers', :type => :feature do
     visit admin_power_path(existing_power)
 
     expect(page.find("#power_name")).to have_content(existing_power.name)
-    expect(page.find("p")).to have_text(existing_power.cost)
   end
 end

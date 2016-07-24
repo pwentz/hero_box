@@ -4,7 +4,6 @@ class PowersController < ApplicationController
   end
 
   def show
-    @purchase = true if current_hero.stopped_crimes.count > @power.cost.to_i
   end
 
   def update

@@ -8,12 +8,23 @@
   = csrf_meta_tags
 
 %body
-  .login
-    - if current_hero
-      %h5= current_hero.name
-      = link_to 'logout', logout_path, :method => :delete
-    - else
-      = link_to 'login', login_path
+
+  .row
+    .panel.panel-default.col-md-4#profile_thumbnail
+      .panel-body
+        - if current_hero
+          .row
+            .col-md-8.text-center
+              %p
+                %h5= current_hero.name
+              %p
+                %h6 Unredeemed crimes left: #{current_hero.stopped_crimes.unredeemed.count}
+              %p.login
+                = link_to 'logout', logout_path, :method => :delete
+            .col-md-4
+              = image_tag(current_hero.image_url, :class => "center-block img-circle img-responsive")
+        - else
+          = link_to 'login', login_path
 
   - flash.each do |type, msg|
     = content_tag :div, msg, :class => "flash_#{type}"

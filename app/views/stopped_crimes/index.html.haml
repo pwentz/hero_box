@@ -12,7 +12,7 @@
         = link_to 'View all potential powers', powers_path
   .card.col-md-3.col-md-offset-1
     - if @recent_power
-      %img{:src => "#{@recent_power.image_url}", :class => "card-img-top img-thumbnail"}
+      %img{:src => "#{@recent_power.image_url}", :class => "card-img-top img-thumbnail center-block"}
       .card-block.text-center.most_recent_power
         %h6.card-text Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
 
