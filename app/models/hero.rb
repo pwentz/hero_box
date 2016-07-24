@@ -10,7 +10,7 @@ class Hero < ActiveRecord::Base
   enum role: %w(default admin)
 
   def assign_defaults
-    self.image_url ||= Faker::Avatar.image("150x150")
+    self.image_url ||= "https://robohash.org/#{rand(1000)}"
     self.role ||= 0
   end
 

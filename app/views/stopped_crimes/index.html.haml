@@ -1,20 +1,20 @@
 .row
   .card.col-md-3
     %img{:src => "#{current_hero.image_url}", :class => "card-img-top img-thumbnail"}
-    .card-block
+    .card-block.text-center
       %h5.card-text
         = current_hero.name
       %h6.card-text Stopped Crimes: #{current_hero.stopped_crimes.count}
   .card.col-md-3.col-md-offset-1
     %img{:src => "http://img13.deviantart.net/15fe/i/2015/015/d/0/rainbow_of_danger_by_altrunchen-d8e0n0h.jpg", :class => "card-img-top img-thumbnail"}
-    .card-block
-      .card-text.text-center
+    .card-block.text-center
+      .card-text
         = link_to 'View all potential powers', powers_path
   .card.col-md-3.col-md-offset-1
     - if @recent_power
       %img{:src => "#{@recent_power.image_url}", :class => "card-img-top img-thumbnail"}
-      .card-block.most_recent_power
-        %h6.card-text.text-center Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
+      .card-block.text-center.most_recent_power
+        %h6.card-text Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
 
 %h5 Your stopped crimes
 
