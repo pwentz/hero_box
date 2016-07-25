@@ -5,13 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = Hero.create(:name => 'Toxin Machine', :password => 'password', :image_url => "http://www.2-clicks-comics.com/images/image/lex-luthor-super-villain.jpg", :hometown => 'Pallet Town', :role => 1)
-hero = Hero.create(:name => 'Jubilee Strange', :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => 'Vermillion City')
-hero_two =  Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
-hero_three = Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
-hero_four = Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
-hero_five = Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
-
+#
+hero = Hero.create(:name => Faker::Superhero.name, :password => 'password', :hometown => Faker::Address.city)
+hero_two = Hero.create(:name => Faker::Superhero.name, :password => 'password', :hometown => Faker::Address.city)
+hero_three = Hero.create(:name => Faker::Superhero.name, :password => 'password', :hometown => Faker::Address.city)
+hero_four = Hero.create(:name => Faker::Superhero.name, :password => 'password', :hometown => Faker::Address.city)
+hero_five = Hero.create(:name => Faker::Superhero.name, :password => 'password', :hometown => Faker::Address.city)
 
 cost = 0
 Power.create(:name => 'Invisibility', :cost => 5, :image_url => "http://cdn1.listovative.com/wp-content/uploads/2014/08/Invisibility-300x300.jpg")
