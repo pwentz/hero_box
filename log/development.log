@@ -22209,3 +22209,641 @@ FOREIGN KEY ("hero_id")
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "hero_powers" ("hero_id", "power_id") VALUES ($1, $2) RETURNING "id"[0m  [["hero_id", 6], ["power_id", 4]]
   [1m[35m (0.2ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2016-07-25 10:42:03 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mHero Load (0.4ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/heros/2/stopped_crimes
+Completed 302 Found in 41ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/heros/2/stopped_crimes" for ::1 at 2016-07-25 10:42:04 -0600
+Processing by StoppedCrimesController#index as HTML
+  Parameters: {"hero_id"=>"2"}
+  [1m[36mHero Load (0.3ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPower Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 2]]
+  [1m[35mPower Exists (0.3ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 2]]
+  [1m[35mStoppedCrime Load (0.4ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 2]]
+  Rendered stopped_crimes/index.html.haml within layouts/application (28.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 352ms (Views: 306.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.self-f88437cade4258a1c67897529f8935efcc8fd0c9608c8ec5e21fe16ecb79c79e.css?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:42:04 -0600
+
+
+Started GET "/login" for ::1 at 2016-07-25 10:42:15 -0600
+Processing by SessionsController#new as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/heros/2/stopped_crimes
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/heros/2/stopped_crimes" for ::1 at 2016-07-25 10:42:15 -0600
+Processing by StoppedCrimesController#index as HTML
+  Parameters: {"hero_id"=>"2"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 2]]
+  [1m[35mPower Exists (0.3ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 2]]
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 2]]
+  Rendered stopped_crimes/index.html.haml within layouts/application (5.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 69ms (Views: 64.6ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/logout" for ::1 at 2016-07-25 10:42:16 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HebCJJjpY/bleBDA42/iyv9ar61KEwZcRmbQLHeh8KfRHT6ooWm1U3KJhdMQz4wyr4NURpLkrx75w7/9YiVhcQ=="}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:42:16 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (328.7ms)
+Completed 200 OK in 376ms (Views: 374.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-07-25 10:42:20 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bTcWMObwOXxj+N5DiDMoweiyicBM2SKZ28F2KFu4/7jZiNdSlafjb5PnPYwi8iV7XZyioFYQn20bkdgQShFV4g==", "session"=>{"name"=>"Jubilee Strange", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."name" = $1 LIMIT 1[0m  [["name", "Jubilee Strange"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:42:20 -0600
+Processing by SessionsController#new as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/heros/2/stopped_crimes
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/heros/2/stopped_crimes" for ::1 at 2016-07-25 10:42:20 -0600
+Processing by StoppedCrimesController#index as HTML
+  Parameters: {"hero_id"=>"2"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 2]]
+  [1m[35mPower Exists (0.3ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 2]]
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 2]]
+  Rendered stopped_crimes/index.html.haml within layouts/application (5.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 43ms (Views: 38.5ms | ActiveRecord: 1.9ms)
+  [1m[36m (121.9ms)[0m  [1mDROP DATABASE IF EXISTS "hero_box_development"[0m
+  [1m[35m (122.7ms)[0m  DROP DATABASE IF EXISTS "hero_box_test"
+  [1m[36m (293.9ms)[0m  [1mCREATE DATABASE "hero_box_development" ENCODING = 'unicode'[0m
+  [1m[35m (243.2ms)[0m  CREATE DATABASE "hero_box_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "hero_powers" ("id" serial primary key, "hero_id" integer, "power_id" integer) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_hero_powers_on_hero_id" ON "hero_powers" USING btree ("hero_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_hero_powers_on_power_id" ON "hero_powers" USING btree ("power_id")
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "heros" ("id" serial primary key, "name" character varying, "hometown" character varying, "password_digest" character varying, "role" integer, "image_url" character varying) [0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "powers" ("id" serial primary key, "name" character varying, "cost" integer, "image_url" character varying) 
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "stopped_crimes" ("id" serial primary key, "potential_victim" character varying, "location" character varying, "created_at" timestamp, "updated_at" timestamp, "hero_id" integer, "crime" character varying, "criminal" character varying, "role" integer) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_stopped_crimes_on_hero_id" ON "stopped_crimes" USING btree ("hero_id")
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "hero_powers" ADD CONSTRAINT "fk_rails_a064e6fddd"
+FOREIGN KEY ("hero_id")
+  REFERENCES "heros" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "hero_powers" ADD CONSTRAINT "fk_rails_1e7d81986f"
+FOREIGN KEY ("power_id")
+  REFERENCES "powers" ("id")
+
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "stopped_crimes" ADD CONSTRAINT "fk_rails_a35331e61d"
+FOREIGN KEY ("hero_id")
+  REFERENCES "heros" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160724205335')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160721212849')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160721213308')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160721213503')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160721214257')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160721214956')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160722131559')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160722191136')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160722191311')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723012552')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160723020757')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723023002')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160723023027')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723185816')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160724143819')[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "hero_powers" ("id" serial primary key, "hero_id" integer, "power_id" integer) [0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_hero_powers_on_hero_id" ON "hero_powers" USING btree ("hero_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_hero_powers_on_power_id" ON "hero_powers" USING btree ("power_id")[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "heros" ("id" serial primary key, "name" character varying, "hometown" character varying, "password_digest" character varying, "role" integer, "image_url" character varying) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "powers" ("id" serial primary key, "name" character varying, "cost" integer, "image_url" character varying) [0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "stopped_crimes" ("id" serial primary key, "potential_victim" character varying, "location" character varying, "created_at" timestamp, "updated_at" timestamp, "hero_id" integer, "crime" character varying, "criminal" character varying, "role" integer) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_stopped_crimes_on_hero_id" ON "stopped_crimes" USING btree ("hero_id")[0m
+  [1m[35m (3.1ms)[0m  ALTER TABLE "hero_powers" ADD CONSTRAINT "fk_rails_a064e6fddd"
+FOREIGN KEY ("hero_id")
+  REFERENCES "heros" ("id")
+
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "hero_powers" ADD CONSTRAINT "fk_rails_1e7d81986f"
+FOREIGN KEY ("power_id")
+  REFERENCES "powers" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "stopped_crimes" ADD CONSTRAINT "fk_rails_a35331e61d"
+FOREIGN KEY ("hero_id")
+  REFERENCES "heros" ("id")
+
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160724205335')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160721212849')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160721213308')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160721213503')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160721214257')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160721214956')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160722131559')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160722191136')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160722191311')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160723012552')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723020757')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160723023002')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723023027')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160723185816')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160724143819')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mHero Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Blink' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "heros" ("name", "password_digest", "hometown", "role", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Blink"], ["password_digest", "$2a$10$3oQdDkUCoZo5b2aXy.iQNerqu/iF3ock94kxr.P/TDjM8eQRONI8i"], ["hometown", "Chelseyfort"], ["role", 0], ["image_url", "https://robohash.org/614"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mHero Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Doctor Box the Fated' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "heros" ("name", "password_digest", "hometown", "role", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Doctor Box the Fated"], ["password_digest", "$2a$10$CLnBbJWSo2sAiQvycudE8etD3MWwfZQqnsINxW3bi6TBJtCg3fORa"], ["hometown", "North Aliviaborough"], ["role", 0], ["image_url", "https://robohash.org/885"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mHero Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Shrinking Violet Girl' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "heros" ("name", "password_digest", "hometown", "role", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Shrinking Violet Girl"], ["password_digest", "$2a$10$9fXcFrzuoTCi5CSnKXEdsefgjINXaX5vzv/QhYl2pQHcJGDyE7Dfu"], ["hometown", "West Xzavierchester"], ["role", 0], ["image_url", "https://robohash.org/221"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mHero Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Agent Metron Machine' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "heros" ("name", "password_digest", "hometown", "role", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Agent Metron Machine"], ["password_digest", "$2a$10$xJPp/Z/nUqzirjTY0lhgLud9jZp8QJM5Z8vgD5swQLbDoLE15nrv."], ["hometown", "West Chet"], ["role", 0], ["image_url", "https://robohash.org/276"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mHero Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Gorilla Grodd' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "heros" ("name", "password_digest", "hometown", "role", "image_url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gorilla Grodd"], ["password_digest", "$2a$10$54.YlDd0ZI97HsHkgPNzsuuZzDc8ntBuULzaTIMeojFVai6c5EMb2"], ["hometown", "Jaskolskiville"], ["role", 0], ["image_url", "https://robohash.org/599"]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPower Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Invisibility' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Invisibility"], ["cost", 5], ["image_url", "http://cdn1.listovative.com/wp-content/uploads/2014/08/Invisibility-300x300.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Underwater Breathing' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Underwater Breathing"], ["cost", 3], ["image_url", "http://vignette3.wikia.nocookie.net/powerlisting/images/b/bd/Namor2.jpg/revision/latest?cb=20110906182916"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Gliding' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Gliding"], ["cost", 6], ["image_url", "http://www.wishingmoon.com/wp-content/uploads/2016/07/superpowers.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Shapeshifting' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shapeshifting"], ["cost", 9], ["image_url", "https://s-media-cache-ak0.pinimg.com/236x/2e/17/8c/2e178cb2666245c612776b8ca515c7e4.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Weapon-based powers' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Weapon-based powers"], ["cost", 12], ["image_url", "https://s-media-cache-ak0.pinimg.com/564x/80/15/93/8015933c8a7f30179e17cc290ceb6c81.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Heat Generation' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Heat Generation"], ["cost", 15], ["image_url", "http://vignette2.wikia.nocookie.net/powerlisting/images/1/1e/Aang_Training_Fire.png/revision/latest?cb=20101008050558"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Duplication' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Duplication"], ["cost", 18], ["image_url", "http://static8.comicvine.com/uploads/scale_small/2/29837/2524996-duplicategirl_duplicating.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Electricity Manipulation' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Electricity Manipulation"], ["cost", 21], ["image_url", "http://vignette4.wikia.nocookie.net/powerlisting/images/6/69/Cole_Macgrath.jpg/revision/latest/scale-to-width-down/320?cb=20130101082611"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Mind Control' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Mind Control"], ["cost", 24], ["image_url", "http://vignette4.wikia.nocookie.net/powerlisting/images/8/8c/Professor_X_by_JJusko.jpg/revision/latest/scale-to-width-down/300?cb=20130206003656"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPower Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "powers" WHERE "powers"."name" = 'Rainbow Beams' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "powers" ("name", "cost", "image_url") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Rainbow Beams"], ["cost", 27], ["image_url", "http://static4.comicvine.com/uploads/square_small/6/68065/2293921-subs014.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "navigating"], ["potential_victim", "Coy Wuckert"], ["location", "Madysontown"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.362496"], ["updated_at", "2016-07-25 16:42:31.362496"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "connecting"], ["potential_victim", "Lauren Macejkovic IV"], ["location", "Langfurt"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.366215"], ["updated_at", "2016-07-25 16:42:31.366215"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "compressing"], ["potential_victim", "Justine Nitzsche"], ["location", "Glenville"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.368655"], ["updated_at", "2016-07-25 16:42:31.368655"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "indexing"], ["potential_victim", "Ms. Neal Gislason"], ["location", "Clairehaven"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.371457"], ["updated_at", "2016-07-25 16:42:31.371457"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "parsing"], ["potential_victim", "Angie O'Hara"], ["location", "Fritschfort"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.374190"], ["updated_at", "2016-07-25 16:42:31.374190"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "transmitting"], ["potential_victim", "Armando Altenwerth"], ["location", "Port Kileyport"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.376710"], ["updated_at", "2016-07-25 16:42:31.376710"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "hacking"], ["potential_victim", "Winona McLaughlin"], ["location", "Hammesview"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.379048"], ["updated_at", "2016-07-25 16:42:31.379048"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "transmitting"], ["potential_victim", "Elroy Lynch"], ["location", "Wizamouth"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.381191"], ["updated_at", "2016-07-25 16:42:31.381191"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "backing up"], ["potential_victim", "Marcus Sanford"], ["location", "Metzberg"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.383281"], ["updated_at", "2016-07-25 16:42:31.383281"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "navigating"], ["potential_victim", "Mr. Giovanny Sanford"], ["location", "McDermottfurt"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.385692"], ["updated_at", "2016-07-25 16:42:31.385692"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "quantifying"], ["potential_victim", "Austen Jast"], ["location", "South Sheilaside"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.388001"], ["updated_at", "2016-07-25 16:42:31.388001"], ["role", 0]]
+  [1m[35m (3.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "calculating"], ["potential_victim", "Victoria Nikolaus"], ["location", "North Isommouth"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.394233"], ["updated_at", "2016-07-25 16:42:31.394233"], ["role", 0]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "bypassing"], ["potential_victim", "Burley O'Hara"], ["location", "New Eugeneton"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.398460"], ["updated_at", "2016-07-25 16:42:31.398460"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "overriding"], ["potential_victim", "Maia Hyatt"], ["location", "West Camrenfurt"], ["hero_id", 1], ["created_at", "2016-07-25 16:42:31.400905"], ["updated_at", "2016-07-25 16:42:31.400905"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "synthesizing"], ["potential_victim", "Trevor Jaskolski"], ["location", "Port Shanelle"], ["hero_id", 2], ["created_at", "2016-07-25 16:42:31.403336"], ["updated_at", "2016-07-25 16:42:31.403336"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "connecting"], ["potential_victim", "Brionna Huel DDS"], ["location", "West Josuetown"], ["hero_id", 2], ["created_at", "2016-07-25 16:42:31.405561"], ["updated_at", "2016-07-25 16:42:31.405561"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "bypassing"], ["potential_victim", "Verlie Hartmann"], ["location", "Port Clarabelle"], ["hero_id", 2], ["created_at", "2016-07-25 16:42:31.407852"], ["updated_at", "2016-07-25 16:42:31.407852"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "synthesizing"], ["potential_victim", "Esther Lockman"], ["location", "New Auroreland"], ["hero_id", 2], ["created_at", "2016-07-25 16:42:31.410708"], ["updated_at", "2016-07-25 16:42:31.410708"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mPower Load (0.1ms)[0m  SELECT  "powers".* FROM "powers" WHERE "powers"."name" = $1 LIMIT 1  [["name", "Underwater Breathing"]]
+  [1m[36mStoppedCrime Load (0.4ms)[0m  [1mSELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  ORDER BY "stopped_crimes"."id" ASC LIMIT 3[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.418575"], ["id", 15]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.422342"], ["id", 16]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.424349"], ["id", 17]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 2]]
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  ORDER BY "stopped_crimes"."id" ASC LIMIT 1  [["hero_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "hero_powers" ("hero_id", "power_id") VALUES ($1, $2) RETURNING "id"  [["hero_id", 2], ["power_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "generating"], ["potential_victim", "Evert Christiansen"], ["location", "Ameliamouth"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.449329"], ["updated_at", "2016-07-25 16:42:31.449329"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "quantifying"], ["potential_victim", "Lizeth Rolfson DVM"], ["location", "North Hiramton"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.452823"], ["updated_at", "2016-07-25 16:42:31.452823"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "bypassing"], ["potential_victim", "Antonette Predovic MD"], ["location", "Lefflerberg"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.455627"], ["updated_at", "2016-07-25 16:42:31.455627"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "overriding"], ["potential_victim", "Tia Walker"], ["location", "Lake Rogelioborough"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.458145"], ["updated_at", "2016-07-25 16:42:31.458145"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "programming"], ["potential_victim", "Ms. Edd Beier"], ["location", "Runteton"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.460477"], ["updated_at", "2016-07-25 16:42:31.460477"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "parsing"], ["potential_victim", "Delilah Barrows MD"], ["location", "Jacobsside"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.462734"], ["updated_at", "2016-07-25 16:42:31.462734"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "quantifying"], ["potential_victim", "Shanel Metz"], ["location", "Lake Lucie"], ["hero_id", 3], ["created_at", "2016-07-25 16:42:31.465082"], ["updated_at", "2016-07-25 16:42:31.465082"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mPower Load (0.1ms)[0m  [1mSELECT  "powers".* FROM "powers" WHERE "powers"."name" = $1 LIMIT 1[0m  [["name", "Gliding"]]
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  ORDER BY "stopped_crimes"."id" ASC LIMIT 6  [["hero_id", 3], ["role", 0]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.468327"], ["id", 19]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.469975"], ["id", 20]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.471505"], ["id", 21]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.473328"], ["id", 22]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.474968"], ["id", 23]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.476594"], ["id", 24]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 3]]
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  ORDER BY "stopped_crimes"."id" ASC LIMIT 1  [["hero_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "hero_powers" ("hero_id", "power_id") VALUES ($1, $2) RETURNING "id"  [["hero_id", 3], ["power_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "connecting"], ["potential_victim", "Retha Windler"], ["location", "Trompmouth"], ["hero_id", 4], ["created_at", "2016-07-25 16:42:31.483529"], ["updated_at", "2016-07-25 16:42:31.483529"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "synthesizing"], ["potential_victim", "Eli Heidenreich V"], ["location", "Eichmannview"], ["hero_id", 4], ["created_at", "2016-07-25 16:42:31.486146"], ["updated_at", "2016-07-25 16:42:31.486146"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "parsing"], ["potential_victim", "Jorge Weissnat"], ["location", "North Lance"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.488505"], ["updated_at", "2016-07-25 16:42:31.488505"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "indexing"], ["potential_victim", "Kurtis Langosh"], ["location", "Milochester"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.490854"], ["updated_at", "2016-07-25 16:42:31.490854"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "backing up"], ["potential_victim", "Edythe Schulist"], ["location", "North Deion"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.492941"], ["updated_at", "2016-07-25 16:42:31.492941"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "generating"], ["potential_victim", "Dr. Brenden Fay"], ["location", "East Garlandburgh"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.495145"], ["updated_at", "2016-07-25 16:42:31.495145"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "calculating"], ["potential_victim", "Allan Prohaska"], ["location", "East Shaniafort"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.497309"], ["updated_at", "2016-07-25 16:42:31.497309"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "programming"], ["potential_victim", "America Rempel"], ["location", "Balistreriborough"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.499357"], ["updated_at", "2016-07-25 16:42:31.499357"], ["role", 0]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "bypassing"], ["potential_victim", "Leanna Hauck"], ["location", "Loisburgh"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.501591"], ["updated_at", "2016-07-25 16:42:31.501591"], ["role", 0]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["crime", "connecting"], ["potential_victim", "Minnie Sauer DVM"], ["location", "Emmerichfort"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.503968"], ["updated_at", "2016-07-25 16:42:31.503968"], ["role", 0]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stopped_crimes" ("crime", "potential_victim", "location", "hero_id", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["crime", "navigating"], ["potential_victim", "Nikolas Hilll"], ["location", "Deckowchester"], ["hero_id", 5], ["created_at", "2016-07-25 16:42:31.506690"], ["updated_at", "2016-07-25 16:42:31.506690"], ["role", 0]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mPower Load (0.2ms)[0m  [1mSELECT  "powers".* FROM "powers" WHERE "powers"."name" = $1 LIMIT 1[0m  [["name", "Shapeshifting"]]
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  ORDER BY "stopped_crimes"."id" ASC LIMIT 9  [["hero_id", 5], ["role", 0]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.510860"], ["id", 28]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.512709"], ["id", 29]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.514294"], ["id", 30]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.515812"], ["id", 31]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.517751"], ["id", 32]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.519577"], ["id", 33]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.521270"], ["id", 34]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 1], ["updated_at", "2016-07-25 16:42:31.523047"], ["id", 35]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 1], ["updated_at", "2016-07-25 16:42:31.524672"], ["id", 36]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 5]]
+  [1m[36mStoppedCrime Load (0.3ms)[0m  [1mSELECT  "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  ORDER BY "stopped_crimes"."id" ASC LIMIT 1[0m  [["hero_id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "hero_powers" ("hero_id", "power_id") VALUES ($1, $2) RETURNING "id"[0m  [["hero_id", 5], ["power_id", 4]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/heros/2/stopped_crimes" for ::1 at 2016-07-25 10:42:40 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoppedCrimesController#index as HTML
+  Parameters: {"hero_id"=>"2"}
+  [1m[35mHero Load (0.3ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPower Exists (0.5ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 2]]
+  [1m[36mPower Load (0.2ms)[0m  [1mSELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1[0m  [["hero_id", 2]]
+  [1m[35mPower Exists (0.3ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 2]]
+  [1m[36mPower Load (0.2ms)[0m  [1mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1[0m  [["hero_id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 2]]
+  [1m[36mStoppedCrime Load (0.2ms)[0m  [1mSELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 2]]
+  Rendered stopped_crimes/index.html.haml within layouts/application (22.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 360ms (Views: 297.1ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/application.self-f88437cade4258a1c67897529f8935efcc8fd0c9608c8ec5e21fe16ecb79c79e.css?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:42:41 -0600
+
+
+Started GET "/powers" for ::1 at 2016-07-25 10:42:50 -0600
+Processing by PowersController#index as HTML
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPower Load (0.3ms)[0m  SELECT "powers".* FROM "powers"  ORDER BY "powers"."cost" ASC
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  Rendered powers/index.html.haml within layouts/application (34.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 98ms (Views: 95.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/powers" for ::1 at 2016-07-25 10:43:24 -0600
+Processing by PowersController#index as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPower Load (0.3ms)[0m  [1mSELECT "powers".* FROM "powers"  ORDER BY "powers"."cost" ASC[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  Rendered powers/index.html.haml within layouts/application (22.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/application.self-f88437cade4258a1c67897529f8935efcc8fd0c9608c8ec5e21fe16ecb79c79e.css?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600

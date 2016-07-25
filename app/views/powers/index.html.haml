@@ -15,7 +15,7 @@
             = power.cost
             stopped crimes
             .row
-              .col-md-10#distance_to_availability
+              .col-md-6#distance_to_availability
                 - if current_hero.wallet < (power.cost * 0.5)
                   %progress{:class => "progress progress-danger", value: "#{current_hero.wallet}", max: "#{power.cost}"}
                 - elsif current_hero.wallet >= (power.cost)
