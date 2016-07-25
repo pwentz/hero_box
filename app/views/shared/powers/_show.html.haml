@@ -1,8 +1,0 @@
-%h5#power_name= @power.name
-
-%p Cost: #{@power.cost}
-
-- if current_hero.stopped_crimes.purchase?(@power)
-  = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-sm"
-- else
-  = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-sm", disabled: true

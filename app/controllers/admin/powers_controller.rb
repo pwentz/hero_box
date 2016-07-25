@@ -1,6 +1,7 @@
 class Admin::PowersController < Admin::BaseController
   before_action :set_power, only: [:edit, :update, :destroy, :show]
   def index
+    @powers = Power.order(:cost)
   end
 
   def new
@@ -46,6 +47,6 @@ class Admin::PowersController < Admin::BaseController
   end
 
   def power_params
-    params.require(:power).permit(:name, :cost)
+    params.require(:power).permit(:name, :cost, :image_url)
   end
 end

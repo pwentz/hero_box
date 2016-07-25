@@ -1,24 +1,33 @@
-#hero_stats
-  %h5 Name: #{@hero.name}
-  %h6 Hometown: #{@hero.hometown}
+.row
+  .card.col-md-3.hero
+    %img{:src => "#{@hero.image_url}", :class => "card-img-top img-thumbnail"}
+    .card-block.text-center#hero_stats
+      %h5.card-text
+        = @hero.name
+      %h6.card-text Stopped Crimes: #{@hero.stopped_crimes.count}
+    .dropdown.action-buttons
+      %button.btn.btn-primary.center-block.dropdown-toggle{:type => "button", 'data-toggle' => "dropdown", "aria-haspopup" => true,
+                                  "aria-expanded" => "true"}
+        Hero
+      %ul.dropdown-menu
+        %li
+          = link_to 'Edit this hero', edit_admin_hero_path(@hero)
+        %li
+          = link_to 'Destroy this hero', admin_hero_path(@hero), method: :delete
+  .card.col-md-3.col-md-offset-1
+    %img{:src => "http://img13.deviantart.net/15fe/i/2015/015/d/0/rainbow_of_danger_by_altrunchen-d8e0n0h.jpg", :class => "card-img-top img-thumbnail"}
+    .card-block.text-center
+      .card-text
+        = link_to 'View all potential powers', admin_powers_path
+  - if @recent_power
+    .card.col-md-3.col-md-offset-1#recent_power
+      %img{:src => "#{@recent_power.image_url}", :class => "card-img-top img-thumbnail center-block"}
+      .card-block.text-center.most_recent_power
+        %h6.card-text Most recent power: #{link_to @recent_power.name, admin_power_path(@recent_power)}
 
-.avatar
-  = image_tag(@hero.image_url)
+%h5 Stopped crimes:
 
-- if @most_recent
-  .most_recent
-    %h5 Most recently stopped crime
-    %ul#last_crime
-      %li Crime Prevented: #{@most_recent.crime}
-      %li Criminal: #{@most_recent.criminal}
-      %li Life Saved: #{@most_recent.potential_victim}
-      %li Location: #{@most_recent.location}
-
-%h5 Crimes prevented by this hero
-%ul#crime_stats
+%div{:class => "list-group", :id => "stopped_crimes_list"}
   - @hero.stopped_crimes.each do |stopped_crime|
-    %li
-      = link_to stopped_crime.crime, admin_stopped_crime_path(stopped_crime)
+    = link_to stopped_crime.crime, admin_stopped_crime_path(stopped_crime), :class => "list-group-item"
 
-= link_to 'Edit this hero', edit_admin_hero_path(@hero)
-= link_to 'Destroy this hero', admin_hero_path(@hero), method: :delete

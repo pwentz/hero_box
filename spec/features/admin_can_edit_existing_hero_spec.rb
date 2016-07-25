@@ -44,7 +44,7 @@ describe 'Admin can edit a hero', :type => :feature do
         expect(page).to have_text(updated_hero_name)
       end
 
-      within("#crime_stats") do
+      within("#stopped_crimes_list") do
         expect(page).to have_link(new_stopped_crime.crime)
         expect(page).not_to have_link(former_stopped_crime.crime)
       end

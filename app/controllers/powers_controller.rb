@@ -1,6 +1,7 @@
 class PowersController < ApplicationController
   before_action :set_power, only: [:show, :update]
   def index
+    @powers = Power.order(:cost)
   end
 
   def show

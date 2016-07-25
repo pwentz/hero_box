@@ -1,7 +1,7 @@
 class Admin::HerosController < Admin::BaseController
   before_action :set_hero, only: [:show, :destroy, :edit, :update]
   def show
-    @most_recent = @hero.stopped_crimes.last unless @hero.stopped_crimes.empty?
+    @recent_power = @hero.powers.last
   end
 
   def index

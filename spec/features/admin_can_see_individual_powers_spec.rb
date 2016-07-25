@@ -13,7 +13,7 @@ describe 'Admin can see individual powers', :type => :feature do
       ApplicationController
     ).to receive(:current_hero).and_return(admin)
 
-    visit powers_path
+    visit admin_powers_path
     click_link existing_power.name
 
     expect(current_path).to eq(admin_power_path(existing_power))

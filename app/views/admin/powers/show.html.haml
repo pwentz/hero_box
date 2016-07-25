@@ -1,3 +1,13 @@
-= render partial: 'shared/powers/show'
-= link_to 'Edit this power', edit_admin_power_path(@power)
-= link_to 'Destroy this power', admin_power_path(@power), method: :delete
+.jumbotron
+  .row
+    %h5#power_name= @power.name
+    %p Cost: #{@power.cost}
+    .col-md-4.col-md-offset-8
+      = image_tag(@power.image_url, :class => "center-block img-rounded img-responsive")
+  %hr.m-y-2
+  - if current_hero.purchase?(@power)
+    = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-lg"
+  - else
+    = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-lg", disabled: true
+  = link_to 'Edit this power', edit_admin_power_path(@power), :class => "btn btn-lg btn-warning"
+  = link_to 'Destroy this power', admin_power_path(@power), method: :delete, :class => "btn btn-lg btn-danger"

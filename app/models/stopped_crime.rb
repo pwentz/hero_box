@@ -11,15 +11,12 @@ class StoppedCrime < ActiveRecord::Base
   end
 
   class << self
-    def purchase?(power)
-      where(:role => 0).count > power.cost.to_i
-    end
 
     def redeem_for_purchase(power)
-      where(:role => 0).first(power.cost.to_i).each do |unredeemed_crime|
+      unredeemed.first(power.cost).each do |unredeemed_crime|
         unredeemed_crime.update_attribute(:role, 1)
       end
-      all.first.hero.add_power(power)
+      all.first.hero.add_power(power) unless all.empty?
     end
 
     def unredeemed

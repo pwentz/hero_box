@@ -1,10 +1,13 @@
 %h5 All Heroes
 
-%ul#heroes_list
+.row#all_heroes
   - Hero.where(:role => 0).each do |hero|
-    = image_tag(hero.image_url)
-    = link_to hero.name, admin_hero_path(hero)
+    .card.col-md-3
+      %a.thumbnail{:href => "#{admin_hero_path(hero)}"}
+        = image_tag(hero.image_url, :class => 'center-block')
+      .card-block.text-center
+        = link_to hero.name, admin_hero_path(hero)
+        %p Total crimes stopped: #{hero.stopped_crimes.count}
+        - unless hero.powers.empty?
+          %p Recently acquired power: #{hero.powers.last.name}
 
-= link_to 'Create new hero', new_admin_hero_path
-= link_to 'Create Power', new_admin_power_path
-= link_to 'Potential Powers', powers_path

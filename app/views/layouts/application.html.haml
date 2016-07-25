@@ -21,10 +21,27 @@
                 %h6 Unredeemed crimes left: #{current_hero.stopped_crimes.unredeemed.count}
               %p.login
                 = link_to 'logout', logout_path, :method => :delete
+              %p.dashboard_btn
+                = link_to 'Back to dashboard', login_path, :class => "btn btn-sm btn-success"
+              - if current_admin?
+                .dropdown.action_buttons
+                  %button.btn.btn-warning.center-block.dropdown-toggle{:type => "button", 'data-toggle' => "dropdown", "aria-haspopup" => true,
+                                                                    "aria-expanded" => "true"}
+                    Actions
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'Create new hero', new_admin_hero_path
+                    %li
+                      = link_to 'Create Power', new_admin_power_path
+                    %li
+                      = link_to 'Potential Powers', admin_powers_path
             .col-md-4
               = image_tag(current_hero.image_url, :class => "center-block img-circle img-responsive")
         - else
           = link_to 'login', login_path
+          %br/
+          = link_to 'Create new account', new_hero_path
+
 
   - flash.each do |type, msg|
     = content_tag :div, msg, :class => "flash_#{type}"

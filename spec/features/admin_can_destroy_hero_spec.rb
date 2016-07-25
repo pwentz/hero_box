@@ -13,7 +13,7 @@ describe 'Admin can destroy a hero', :type => :feature do
     click_link 'Destroy this hero'
 
     expect(current_path).to eq(admin_heros_path(admin))
-    within("#heroes_list") do
+    within("#all_heroes") do
       expect(page).not_to have_link(hero.name)
     end
   end

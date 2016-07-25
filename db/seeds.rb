@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = Hero.create(:name => 'Toxin Machine', :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => 'Pallet Town', :role => 1)
+admin = Hero.create(:name => 'Toxin Machine', :password => 'password', :image_url => "http://www.2-clicks-comics.com/images/image/lex-luthor-super-villain.jpg", :hometown => 'Pallet Town', :role => 1)
 hero = Hero.create(:name => 'Jubilee Strange', :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => 'Vermillion City')
 hero_two =  Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
 hero_three = Hero.create(:name => Faker::Superhero.name, :password => 'password', :image_url => "https://robohash.org/#{rand(1000)}", :hometown => Faker::Address.city)
@@ -22,7 +22,7 @@ Power.create(:name => 'Weapon-based powers', :cost => cost += 3, :image_url => "
 Power.create(:name => 'Heat Generation', :cost => cost += 3, :image_url => "http://vignette2.wikia.nocookie.net/powerlisting/images/1/1e/Aang_Training_Fire.png/revision/latest?cb=20101008050558")
 Power.create(:name => 'Duplication', :cost => cost += 3, :image_url => "http://static8.comicvine.com/uploads/scale_small/2/29837/2524996-duplicategirl_duplicating.jpg")
 Power.create(:name => 'Electricity Manipulation', :cost => cost += 3, :image_url => "http://vignette4.wikia.nocookie.net/powerlisting/images/6/69/Cole_Macgrath.jpg/revision/latest/scale-to-width-down/320?cb=20130101082611")
-Power.create(:name => 'Mind Control', :cost => cost += 3, :image_url => "http://static.tvtropes.org/pmwiki/pub/images/Mind_Haxorz_6044.jpg")
+Power.create(:name => 'Mind Control', :cost => cost += 3, :image_url => "http://vignette4.wikia.nocookie.net/powerlisting/images/8/8c/Professor_X_by_JJusko.jpg/revision/latest/scale-to-width-down/300?cb=20130206003656")
 Power.create(:name => 'Rainbow Beams', :cost => cost += 3, :image_url => "http://static4.comicvine.com/uploads/square_small/6/68065/2293921-subs014.jpg")
 
 hero.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)

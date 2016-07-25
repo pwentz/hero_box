@@ -1,1 +1,11 @@
-= render partial: 'shared/powers/show'
+.jumbotron
+  .row
+    %h5#power_name= @power.name
+    %p Cost: #{@power.cost}
+    .col-md-4.col-md-offset-8
+      = image_tag(@power.image_url, :class => "center-block img-rounded img-responsive")
+  %hr.m-y-2
+  - if current_hero.purchase?(@power)
+    = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-lg"
+  - else
+    = link_to 'Purchase power', power_path(@power), method: :put, :class => "btn btn-lg", disabled: true
