@@ -22,6 +22,13 @@ class StoppedCrime < ActiveRecord::Base
     def unredeemed
       where(:role => 0)
     end
+
+    def set_redeemable(stopped_crime_ids)
+      where(id: stopped_crime_ids).each do |stopped_crime|
+        stopped_crime.update_attribute(:role, 0)
+      end
+    end
   end
+
 
 end

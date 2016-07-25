@@ -34,6 +34,7 @@ class Admin::HerosController < Admin::BaseController
 
   def update
     if @hero.update(hero_params)
+      @hero.stopped_crimes.set_redeemable(hero_params[:stopped_crime_ids])
       flash[:success] = "Hero updated!"
       redirect_to admin_hero_path(@hero)
     else

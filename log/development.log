@@ -22847,3 +22847,490 @@ Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:43:24 -0600
+
+
+Started GET "/powers" for ::1 at 2016-07-25 10:49:53 -0600
+Processing by PowersController#index as HTML
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPower Load (0.2ms)[0m  SELECT "powers".* FROM "powers"  ORDER BY "powers"."cost" ASC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 2], ["role", 0]]
+  Rendered powers/index.html.haml within layouts/application (26.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 2], ["role", 0]]
+Completed 200 OK in 75ms (Views: 59.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/application.self-f88437cade4258a1c67897529f8935efcc8fd0c9608c8ec5e21fe16ecb79c79e.css?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:49:53 -0600
+
+
+Started DELETE "/logout" for ::1 at 2016-07-25 10:49:55 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tFI27frimaLOorg6+wNTM2WRgVtKVBTJonyxAbpZQN4A7fePibVDsT69W/VRwl6J0L+qO1CdqT1iLB85q/DqhA=="}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:49:55 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (314.5ms)
+Completed 200 OK in 366ms (Views: 365.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-07-25 10:50:01 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39D7YSbNDgDH3FRApGzuMxPEwYi1SVDNDxXWLECfiguhcGmenK1GY0dTZ81V5y+1hxPKwMdH2E88W/btZ9CeBQ==", "session"=>{"name"=>"Toxin Machine", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."name" = $1 LIMIT 1[0m  [["name", "Toxin Machine"]]
+  Rendered sessions/new.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mHero Exists (0.5ms)[0m  SELECT  1 AS one FROM "heros" WHERE "heros"."name" = 'Toxin Machine' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "heros" ("name", "password_digest", "image_url", "role") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Toxin Machine"], ["password_digest", "$2a$10$RKpkDp73YOQ.q80dGIEjEOyruEe7G0neYX4Z7EeKE/XwKcZjbGUOS"], ["image_url", "http://www.2-clicks-comics.com/images/image/lex-luthor-super-villain.jpg"], ["role", 1]]
+  [1m[35m (6.0ms)[0m  COMMIT
+
+
+Started POST "/login" for ::1 at 2016-07-25 10:51:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BGsi0Z9KjfxPYkKbFjd6WVGFOpbZQOr/C9ZwUuRWZzl6y7AuJSrFn8/tcRbnvLvfxVIx3qtOYn04mFCTwxlzNw==", "session"=>{"name"=>"Toxin Machine", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[35mHero Load (0.3ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."name" = $1 LIMIT 1  [["name", "Toxin Machine"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:51:05 -0600
+Processing by SessionsController#new as HTML
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Redirected to http://localhost:3000/admin/heros
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/heros" for ::1 at 2016-07-25 10:51:05 -0600
+Processing by Admin::HerosController#index as HTML
+  [1m[35mHero Load (0.3ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.3ms)[0m  [1mSELECT "heros".* FROM "heros" WHERE "heros"."role" = $1[0m  [["role", 0]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 1]]
+  [1m[36mPower Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 2]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 2]]
+  [1m[35mPower Load (0.3ms)[0m  SELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1  [["hero_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 3]]
+  [1m[35mPower Exists (0.3ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 3]]
+  [1m[36mPower Load (0.3ms)[0m  [1mSELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1[0m  [["hero_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 5]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 5]]
+  [1m[35mPower Load (0.5ms)[0m  SELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1  [["hero_id", 5]]
+  Rendered admin/heros/index.html.haml within layouts/application (60.8ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 6], ["role", 0]]
+Completed 200 OK in 340ms (Views: 330.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/admin/heros/4" for ::1 at 2016-07-25 10:51:11 -0600
+Processing by Admin::HerosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mPower Load (0.3ms)[0m  SELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1  [["hero_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 4]]
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  Rendered admin/heros/show.html.haml within layouts/application (19.4ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 6], ["role", 0]]
+Completed 200 OK in 101ms (Views: 97.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/heros/4/edit" for ::1 at 2016-07-25 10:51:13 -0600
+Processing by Admin::HerosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.4ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered shared/_errors.html.haml (2.9ms)
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes"
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 1]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 2]]
+  [1m[36mStoppedCrime Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 3]]
+  [1m[35mStoppedCrime Exists (0.4ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 4]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 5]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 6]]
+  [1m[36mStoppedCrime Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 7]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 8]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 9]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 10]]
+  [1m[36mStoppedCrime Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 11]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 12]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 13]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 14]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 18]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 15]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 16]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 17]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 25]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 19]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 20]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 21]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 22]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 23]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 24]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 26]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 27]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 28]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 29]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 30]]
+  [1m[36mStoppedCrime Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 31]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 32]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 33]]
+  [1m[35mStoppedCrime Exists (0.1ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 34]]
+  [1m[36mStoppedCrime Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1[0m  [["hero_id", 4], ["id", 35]]
+  [1m[35mStoppedCrime Exists (0.2ms)[0m  SELECT  1 AS one FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" = $2 LIMIT 1  [["hero_id", 4], ["id", 36]]
+  Rendered admin/heros/shared/_form.html.haml (393.1ms)
+  Rendered admin/heros/edit.html.haml within layouts/application (400.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 6], ["role", 0]]
+Completed 200 OK in 439ms (Views: 430.0ms | ActiveRecord: 7.4ms)
+
+
+Started PATCH "/admin/heros/4" for ::1 at 2016-07-25 10:51:33 -0600
+Processing by Admin::HerosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlrJ7FZkj2yduqCgY3JRss5SZcdNPKBALlqoIBbekL9Q+lsT7ATHDx01ky2S+ZA0WoVujz8yKMIdFIjhMZGEsQ==", "hero"=>{"name"=>"Agent Metron Machine", "hometown"=>"West Chet", "password"=>"[FILTERED]", "image_url"=>"https://robohash.org/276", "role"=>"0", "stopped_crime_ids"=>["6", "7", "8", "9", "10", "11", "12", "13", "18", "15", "16", "17", "25", "19", "20", "26", "27"]}, "commit"=>"Update Hero", "id"=>"4"}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Unpermitted parameter: role
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStoppedCrime Load (0.3ms)[0m  [1mSELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."id" IN (6, 7, 8, 9, 10, 11, 12, 13, 18, 15, 16, 17, 25, 19, 20, 26, 27)[0m
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.936928"], ["id", 6]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.939444"], ["id", 7]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.941326"], ["id", 8]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.943003"], ["id", 9]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.944732"], ["id", 10]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.946286"], ["id", 11]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.947746"], ["id", 12]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.949172"], ["id", 13]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.950521"], ["id", 18]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.951941"], ["id", 15]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.953387"], ["id", 16]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.954848"], ["id", 17]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.956206"], ["id", 25]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.957657"], ["id", 19]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "hero_id" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["hero_id", 4], ["updated_at", "2016-07-25 16:51:33.959018"], ["id", 20]]
+  [1m[35mHero Exists (0.3ms)[0m  SELECT  1 AS one FROM "heros" WHERE ("heros"."name" = 'Agent Metron Machine' AND "heros"."id" != 4) LIMIT 1
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Unpermitted parameter: role
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 6.8ms)
+
+NoMethodError (undefined method `set_redeemable' for #<StoppedCrime::ActiveRecord_Associations_CollectionProxy:0x007fa75883dba8>):
+  app/controllers/admin/heros_controller.rb:37:in `update'
+
+
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.5ms)
+
+
+Started PATCH "/admin/heros/4" for ::1 at 2016-07-25 10:52:43 -0600
+Processing by Admin::HerosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlrJ7FZkj2yduqCgY3JRss5SZcdNPKBALlqoIBbekL9Q+lsT7ATHDx01ky2S+ZA0WoVujz8yKMIdFIjhMZGEsQ==", "hero"=>{"name"=>"Agent Metron Machine", "hometown"=>"West Chet", "password"=>"[FILTERED]", "image_url"=>"https://robohash.org/276", "role"=>"0", "stopped_crime_ids"=>["6", "7", "8", "9", "10", "11", "12", "13", "18", "15", "16", "17", "25", "19", "20", "26", "27"]}, "commit"=>"Update Hero", "id"=>"4"}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Unpermitted parameter: role
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStoppedCrime Load (0.3ms)[0m  [1mSELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."id" IN (6, 7, 8, 9, 10, 11, 12, 13, 18, 15, 16, 17, 25, 19, 20, 26, 27)[0m
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  [1m[36mHero Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "heros" WHERE ("heros"."name" = 'Agent Metron Machine' AND "heros"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Unpermitted parameter: role
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.4ms)
+
+NoMethodError (undefined method `set_redeemable' for #<StoppedCrime::ActiveRecord_Associations_CollectionProxy:0x007fa75c981c68>):
+  app/controllers/admin/heros_controller.rb:37:in `update'
+
+
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.1ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.8ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/patrickwentz/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.0ms)
+
+
+Started PATCH "/admin/heros/4" for ::1 at 2016-07-25 10:53:01 -0600
+Processing by Admin::HerosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlrJ7FZkj2yduqCgY3JRss5SZcdNPKBALlqoIBbekL9Q+lsT7ATHDx01ky2S+ZA0WoVujz8yKMIdFIjhMZGEsQ==", "hero"=>{"name"=>"Agent Metron Machine", "hometown"=>"West Chet", "password"=>"[FILTERED]", "image_url"=>"https://robohash.org/276", "role"=>"0", "stopped_crime_ids"=>["6", "7", "8", "9", "10", "11", "12", "13", "18", "15", "16", "17", "25", "19", "20", "26", "27"]}, "commit"=>"Update Hero", "id"=>"4"}
+  [1m[36mHero Load (0.1ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 4]]
+Unpermitted parameter: role
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."id" IN (6, 7, 8, 9, 10, 11, 12, 13, 18, 15, 16, 17, 25, 19, 20, 26, 27)
+  [1m[36mStoppedCrime Load (0.4ms)[0m  [1mSELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 4]]
+  [1m[35mHero Exists (0.3ms)[0m  SELECT  1 AS one FROM "heros" WHERE ("heros"."name" = 'Agent Metron Machine' AND "heros"."id" != 4) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Unpermitted parameter: role
+  [1m[35mStoppedCrime Load (0.2ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."id" IN (6, 7, 8, 9, 10, 11, 12, 13, 18, 15, 16, 17, 25, 19, 20, 26, 27)  [["hero_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 0], ["updated_at", "2016-07-25 16:53:01.223584"], ["id", 15]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 0], ["updated_at", "2016-07-25 16:53:01.226750"], ["id", 16]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 0], ["updated_at", "2016-07-25 16:53:01.228934"], ["id", 17]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3[0m  [["role", 0], ["updated_at", "2016-07-25 16:53:01.232283"], ["id", 19]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "stopped_crimes" SET "role" = $1, "updated_at" = $2 WHERE "stopped_crimes"."id" = $3  [["role", 0], ["updated_at", "2016-07-25 16:53:01.234373"], ["id", 20]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/heros/4
+Completed 302 Found in 56ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/admin/heros/4" for ::1 at 2016-07-25 10:53:01 -0600
+Processing by Admin::HerosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mPower Load (0.3ms)[0m  SELECT  "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1  ORDER BY "powers"."id" DESC LIMIT 1  [["hero_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 4]]
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  Rendered admin/heros/show.html.haml within layouts/application (4.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 6], ["role", 0]]
+Completed 200 OK in 53ms (Views: 39.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.self-f88437cade4258a1c67897529f8935efcc8fd0c9608c8ec5e21fe16ecb79c79e.css?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-25 10:53:01 -0600
+
+
+Started DELETE "/logout" for ::1 at 2016-07-25 10:53:07 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7v6kHHY3XCGIo+nZlzw6Zh2HM6DBXydQp0rSgqh7jG6QXjbjzFcUQggs2lRmt/vgiVA46LNRr9KUBPJDjzSYYA=="}
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 6]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:53:07 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-07-25 10:53:14 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zv4vCU2hSvZYDHt7b5RKO6QrPj39IgSL9qLy5DWdsBDIAOYSpjHwR6wU1pTZvU+VQwYvwURrqfqyLoMdvC6kCg==", "session"=>{"name"=>"Agent Metron Machine", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."name" = $1 LIMIT 1[0m  [["name", "Agent Metron Machine"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-25 10:53:14 -0600
+Processing by SessionsController#new as HTML
+  [1m[35mHero Load (0.1ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 4]]
+Redirected to http://localhost:3000/heros/4/stopped_crimes
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/heros/4/stopped_crimes" for ::1 at 2016-07-25 10:53:14 -0600
+Processing by StoppedCrimesController#index as HTML
+  Parameters: {"hero_id"=>"4"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mPower Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1[0m  [["hero_id", 4]]
+  [1m[35mPower Exists (0.2ms)[0m  SELECT  1 AS one FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = $1 LIMIT 1  [["hero_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1[0m  [["hero_id", 4]]
+  [1m[35mStoppedCrime Load (0.3ms)[0m  SELECT "stopped_crimes".* FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1  [["hero_id", 4]]
+  Rendered stopped_crimes/index.html.haml within layouts/application (11.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+Completed 200 OK in 58ms (Views: 51.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/powers" for ::1 at 2016-07-25 10:53:21 -0600
+Processing by PowersController#index as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT  "heros".* FROM "heros" WHERE "heros"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mPower Load (0.4ms)[0m  [1mSELECT "powers".* FROM "powers"  ORDER BY "powers"."cost" ASC[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2[0m  [["hero_id", 4], ["role", 0]]
+  Rendered powers/index.html.haml within layouts/application (32.6ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM "stopped_crimes" WHERE "stopped_crimes"."hero_id" = $1 AND "stopped_crimes"."role" = $2  [["hero_id", 4], ["role", 0]]
+Completed 200 OK in 71ms (Views: 67.9ms | ActiveRecord: 1.5ms)

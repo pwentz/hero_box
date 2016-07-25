@@ -28,4 +28,5 @@ class Hero < ActiveRecord::Base
   def wallet
     stopped_crimes.unredeemed.count
   end
+
 end
