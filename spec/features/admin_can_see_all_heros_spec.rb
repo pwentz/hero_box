@@ -10,7 +10,7 @@ describe "Admin can see all heroes" do
 
     visit admin_heros_path(admin)
 
-    within("#heroes_list") do
+    within("#all_heroes") do
       expect(page).to have_link(hero_one.name)
       expect(page).to have_link(hero_two.name)
       expect(page).to have_link(hero_three.name)

@@ -18,10 +18,8 @@ FactoryGirl.define do
 
   factory :power do
     name { Faker::Superhero.power }
-    cost 
+    cost 0
+    image_url { Faker::Placeholdit.image }
   end
 
-  sequence :cost do |n|
-    n + 5
-  end
 end

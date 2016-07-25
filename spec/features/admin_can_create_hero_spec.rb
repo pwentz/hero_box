@@ -6,7 +6,7 @@ require 'rails_helper'
 # I should find my new hero on the hero index
 # with any other existing heros
 
-describe 'Admin can create a hero' do
+describe 'Admin can create a hero', :type => :feature do
   context 'with valid credentials and default image' do
     scenario 'they create hero and redirected to hero index' do
       admin = create(:hero, :role => 1)
@@ -29,7 +29,7 @@ describe 'Admin can create a hero' do
         click_button 'Create Hero'
       end
 
-      within("#heroes_list") do
+      within("#all_heroes") do
         expect(page).to have_link(existing_hero.name)
         expect(page).to have_link('Bill')
       end
@@ -52,7 +52,7 @@ describe 'Admin can create a hero' do
         click_button 'Create Hero'
       end
 
-      within("#heroes_list") do
+      within("#all_heroes") do
         expect(page).to have_css("img[src=\"#{Hero.last.image_url}\"]")
       end
     end
@@ -75,7 +75,6 @@ describe 'Admin can create a hero' do
       expect(page).to have_css(".new_hero")
       within(".new_hero") do
         expect(page).to have_content("Name can't be blank")
-        expect(page).to have_content("Hometown can't be blank")
         expect(page).to have_content("Password can't be blank")
       end
     end

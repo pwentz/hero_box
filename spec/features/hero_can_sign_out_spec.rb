@@ -29,7 +29,7 @@ describe 'Hero can sign out' do
 
     click_link 'logout'
 
-    expect(page).to have_css('.login')
     expect(page.find(".flash_success")).to have_content('Successfully logged out!')
+    expect(page).to have_link('login')
   end
 end

@@ -1,6 +1,18 @@
-%h5= @stopped_crime.crime
-
-%ul#crime_details
-  %li Criminal: #{@stopped_crime.criminal} 
-  %li Potential Victim: #{@stopped_crime.potential_victim} 
-  %li Location: #{@stopped_crime.location} 
+.jumbotron
+  %table.table.table-hover#crime_details
+    %thead
+      %tr
+        %th{:colspan => "2"} Crime Details
+    %tbody
+      %tr
+        %td Crime:
+        %td= @stopped_crime.crime
+      %tr
+        %td Criminal:
+        %td= @stopped_crime.criminal
+      %tr
+        %td Potential Victim:
+        %td= @stopped_crime.potential_victim
+      %tr
+        %td Location:
+        %td= @stopped_crime.location

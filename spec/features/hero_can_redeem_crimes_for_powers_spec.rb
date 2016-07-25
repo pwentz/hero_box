@@ -66,7 +66,9 @@ describe 'Hero can redeem stopped crimes for powers' do
 
       visit power_path(power)
 
-      expect(page).not_to have_link('Purchase power')
+      expect(
+        page.find_link('Purchase power').disabled?
+      ).to eq(true)
     end
   end
 end

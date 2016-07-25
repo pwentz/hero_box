@@ -1,0 +1,13 @@
+%h5 Register your hero
+= form_for(@hero) do |f|
+  = render partial: '/shared/errors', locals: {target: @hero}
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :password
+  = f.password_field :password
+  %br/
+  = f.label :image_url
+  = f.text_field :image_url
+  %br/
+  = f.submit

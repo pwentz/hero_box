@@ -18,7 +18,7 @@ describe 'Admin can see all potential powers', :type => :feature do
 
     click_link 'Potential Powers'
 
-    expect(current_path).to eq(powers_path)
+    expect(current_path).to eq(admin_powers_path)
   end
 
   scenario 'they can see any existing powers' do
@@ -29,7 +29,7 @@ describe 'Admin can see all potential powers', :type => :feature do
       ApplicationController
     ).to receive(:current_hero).and_return(admin)
 
-    visit powers_path
+    visit admin_powers_path
 
     within("#powers_list") do
       expect(page).to have_link(power_one.name)

@@ -1,10 +1,29 @@
-= link_to 'Potential Powers', powers_path
-- if @recent_power
-  .most_recent_power
-    %h5 Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
-%h5 Your stopped crimes
+.row
+  .card.col-md-3
+    .list-group#current_powers_list
+      %h5.list-group-item Current Powers:
+      - unless current_hero.powers.empty?
+        - current_hero.powers.each do |power|
+          = link_to power.name, power_path(power), :class => 'list-group-item'
+      - else
+        %p You need to fight some more crime!
+    .card-block.text-center
+      %h5.card-text
+        = current_hero.name
+      %h6.card-text Stopped Crimes: #{current_hero.stopped_crimes.count}
+  .card.col-md-3.col-md-offset-1
+    %img{:src => "http://img13.deviantart.net/15fe/i/2015/015/d/0/rainbow_of_danger_by_altrunchen-d8e0n0h.jpg", :class => "card-img-top img-thumbnail"}
+    .card-block.text-center
+      .card-text
+        = link_to 'View all potential powers', powers_path
+  - if @recent_power
+    .card.col-md-3.col-md-offset-1#recent_power
+      %img{:src => "#{@recent_power.image_url}", :class => "card-img-top img-thumbnail center-block"}
+      .card-block.text-center.most_recent_power
+        %h6.card-text Most recent power: #{link_to @recent_power.name, power_path(@recent_power)}
 
-%ul#stopped_crimes_list
+%h5 Your stopped crimes:
+
+%div{:class => "list-group", :id => "stopped_crimes_list"}
   - current_hero.stopped_crimes.each do |stopped_crime|
-    %li
-      = link_to stopped_crime.crime, hero_stopped_crime_path(current_hero, stopped_crime)
+    = link_to stopped_crime.crime, hero_stopped_crime_path(current_hero, stopped_crime), :class => "list-group-item"

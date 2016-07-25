@@ -1,10 +1,10 @@
 class PowersController < ApplicationController
   before_action :set_power, only: [:show, :update]
   def index
+    @powers = Power.order(:cost)
   end
 
   def show
-    @purchase = true if current_hero.stopped_crimes.count > @power.cost.to_i
   end
 
   def update

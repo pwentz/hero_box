@@ -16,7 +16,7 @@ describe 'Hero can see potential powers' do
     ).to receive(:current_hero).and_return(hero)
 
     visit hero_stopped_crimes_path(hero) 
-    click_link 'Potential Powers'
+    click_link 'View all potential powers'
 
     expect(current_path).to eq(powers_path)
   end

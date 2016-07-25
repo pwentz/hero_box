@@ -1,0 +1,19 @@
+require 'rails_helper'
+
+describe 'Hero can create account', :type => :feature do
+  scenario 'they can see create account button when not signed in' do
+    visit powers_path
+
+    within("#profile_thumbnail") do
+      expect(page).to have_link('Create new account')
+    end
+  end
+
+  scenario 'they can click create account button and are taken to form' do
+    visit powers_path
+
+    click_link 'Create new account'
+
+    expect(page).to have_css(".new_hero")
+  end
+end
