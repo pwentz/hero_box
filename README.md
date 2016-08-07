@@ -1,10 +1,10 @@
 An app where an admin can assign points to users and users can redeem those points for rewards. In this variation, users are heros and points are stopped crimes. The stopped crimes can get redeemed for superpowers. Full functionality described below:
 
 Production: https://fast-eyrie-23101.herokuapp.com/
-****
 Login: Impulse
-password: password
 
+password: password
+****
 Stopped Crimes
 
 Stopped Crimes can be created ("assigned to a hero") and destroyed only by the admin
