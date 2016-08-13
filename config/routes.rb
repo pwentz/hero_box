@@ -12,6 +12,14 @@ Rails.application.routes.draw do
     resources :stopped_crimes, except: [:update, :edit]
   end
 
+  namespace :api do
+    namespace :v1 do
+      namespace :admin do
+        resources :heros
+      end
+    end
+  end
+
   resources :powers, only: [:index, :show, :update]
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

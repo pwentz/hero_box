@@ -1,12 +1,1 @@
-%h5 All Heroes
-
-.row#all_heroes
-  - Hero.where(:role => 0).each do |hero|
-    .card.col-md-3
-      %a.thumbnail{:href => "#{admin_hero_path(hero)}"}
-        = image_tag(hero.image_url, :class => 'center-block')
-      .card-block.text-center
-        = link_to hero.name, admin_hero_path(hero)
-        %p Total crimes stopped: #{hero.stopped_crimes.count}
-        - unless hero.powers.empty?
-          %p Recently acquired power: #{hero.powers.last.name}
+= react_component 'Main'
