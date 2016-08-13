@@ -28,28 +28,28 @@ Power.create(:name => 'Mind Control', :cost => cost += 3, :image_url => "http://
 Power.create(:name => 'Rainbow Beams', :cost => cost += 3, :image_url => "http://static4.comicvine.com/uploads/square_small/6/68065/2293921-subs014.jpg")
 
 14.times do
-  hero.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+  hero.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
 end
 
 5.times do
-  hero_two.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+  hero_two.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
 end
 
 hero_two.stopped_crimes.redeem_for_purchase(Power.find_by(:name => 'Underwater Breathing'))
 
 
 8.times do
-  hero_three.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+  hero_three.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
 end
 
 hero_three.stopped_crimes.redeem_for_purchase(Power.find_by(:name => 'Gliding'))
 
 
-hero_four.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
-hero_four.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+hero_four.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+hero_four.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
 
 
 10.times do
-  hero_five.stopped_crimes.create(:crime => Faker::Hacker.ingverb, :potential_victim => Faker::Name.name, :location => Faker::Address.city)
+  hero_five.stopped_crimes.create(:crime => Faker::Lorem.characters(rand(1..50)), :potential_victim => Faker::Name.name, :location => Faker::Address.city)
 end
 hero_five.stopped_crimes.redeem_for_purchase(Power.find_by(:name => 'Shapeshifting'))

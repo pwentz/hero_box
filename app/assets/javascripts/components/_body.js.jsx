@@ -23,10 +23,35 @@ var Body = React.createClass({
     this.setState({ heros: newHeros });
   },
 
+  onUpdate(newHero) {
+    $.ajax({
+      url: `/api/v1/admin/heros/${newHero.id}`,
+      type: 'PUT',
+      data: { hero: { newHero } },
+      success: () => {
+        console.log(`Successfully edited hero #${newHero.id}`)
+        this.updateHeros(newHero);
+      }
+    });
+  },
+
+  updateHeros(newHero) {
+    var updatedHeros = this.state.heros.map((h) => {
+      if (h.id === newHero.id) {
+        return newHero;
+      }
+      else {
+        return h;
+      }
+    });
+
+    this.setState({ heros: updatedHeros })
+  },
+
   render() {
     return (
       <div>
-        <AllHeros heros={this.state.heros} handleDelete={this.handleDelete} />
+        <AllHeros heros={this.state.heros} handleDelete={this.handleDelete} handleEdit={this.onUpdate} />
       </div>
     )
   }
