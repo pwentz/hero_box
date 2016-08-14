@@ -1,6 +1,6 @@
 class StoppedCrime < ActiveRecord::Base
   belongs_to :hero
-  validates :crime, presence: true
+  validates :crime, uniqueness: true
   validates :potential_victim, presence: true
   validates :location, presence: true
 

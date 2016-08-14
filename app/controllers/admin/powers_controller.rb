@@ -1,5 +1,6 @@
 class Admin::PowersController < Admin::BaseController
   before_action :set_power, only: [:edit, :update, :destroy, :show]
+
   def index
     @powers = Power.order(:cost)
   end

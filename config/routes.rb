@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'sessions#new'
-  resources :heros, only: [:create, :new] do
+  resources :heros, only: [:create, :new, :show] do
     resources :stopped_crimes, only: [:show, :index]
   end
 
@@ -10,6 +10,14 @@ Rails.application.routes.draw do
     resources :heros
     resources :powers
     resources :stopped_crimes, except: [:update, :edit]
+  end
+
+  namespace :api do
+    namespace :v1 do
+      namespace :admin do
+        resources :heros
+      end
+    end
   end
 
   resources :powers, only: [:index, :show, :update]
