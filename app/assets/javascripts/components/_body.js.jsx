@@ -1,4 +1,4 @@
-var Body = React.createClass({
+let Body = React.createClass({
   getInitialState() {
     return { heros: [] };
   },
@@ -19,7 +19,7 @@ var Body = React.createClass({
   },
 
   filterHeros(hero_id) {
-    var newHeros = this.state.heros.filter((h) => { return h.id !== hero_id });
+    let newHeros = this.state.heros.filter((h) => { return h.id !== hero_id });
     this.setState({ heros: newHeros });
   },
 
@@ -27,7 +27,7 @@ var Body = React.createClass({
     $.ajax({
       url: `/api/v1/admin/heros/${newHero.id}`,
       type: 'PUT',
-      data: { hero: { newHero } },
+      data: { hero: newHero },
       success: () => {
         console.log(`Successfully edited hero #${newHero.id}`)
         this.updateHeros(newHero);
@@ -36,16 +36,10 @@ var Body = React.createClass({
   },
 
   updateHeros(newHero) {
-    var updatedHeros = this.state.heros.map((h) => {
-      if (h.id === newHero.id) {
-        return newHero;
-      }
-      else {
-        return h;
-      }
-    });
+    let newHeros = this.state.heros.filter((h) => { return h.id !== newHero.id})
+    newHeros.push(newHero)
 
-    this.setState({ heros: updatedHeros })
+    this.setState({ heros: newHeros })
   },
 
   render() {

@@ -12,10 +12,14 @@ class Api::V1::Admin::HerosController < Api::V1::BaseController
     respond_with Hero.update(params[:id], hero_params)
   end
 
+  def show
+    respond_with Hero.find(params[:id])
+  end
+
   private
 
   def hero_params
-    params.require(:hero).permit(:name, :hometown, :id, :role)
+    params.require(:hero).permit(:name, :hometown, :id, :role, :image_url)
   end
 
   def destroy_hero

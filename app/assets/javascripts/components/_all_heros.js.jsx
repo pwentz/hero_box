@@ -1,12 +1,12 @@
-var AllHeros = React.createClass({
+let AllHeros = React.createClass({
   onUpdate(hero) {
     this.props.handleEdit(hero);
   },
 
   render() {
-    var heros = this.props.heros.map((hero, index) => {
+    let heros = this.props.heros.map((hero, index) => {
       return (
-        <div key={hero.id}>
+        <div key={hero.id} class=''>
           <Hero hero={hero}
                 index={index}
                 handleEdit={this.onUpdate}
@@ -15,7 +15,7 @@ var AllHeros = React.createClass({
       )
     });
     return (
-      <div>
+      <div class='row' id='all-heroes'>
         {heros}
       </div>
     )
