@@ -6,7 +6,7 @@ let AllHeros = React.createClass({
   render() {
     let heros = this.props.heros.map((hero, index) => {
       return (
-        <div key={hero.id} class=''>
+        <div key={hero.id}>
           <Hero hero={hero}
                 index={index}
                 handleEdit={this.onUpdate}
@@ -15,7 +15,7 @@ let AllHeros = React.createClass({
       )
     });
     return (
-      <div class='row' id='all-heroes'>
+      <div className='row' id='all-heroes'>
         {heros}
       </div>
     )

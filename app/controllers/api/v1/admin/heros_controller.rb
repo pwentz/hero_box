@@ -16,10 +16,14 @@ class Api::V1::Admin::HerosController < Api::V1::BaseController
     respond_with Hero.find(params[:id])
   end
 
+  def create
+    respond_with Hero.create(hero_params)
+  end
+
   private
 
   def hero_params
-    params.require(:hero).permit(:name, :hometown, :id, :role, :image_url)
+    params.require(:hero).permit(:name, :hometown, :id, :role, :image_url, :password)
   end
 
   def destroy_hero

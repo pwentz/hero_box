@@ -7,6 +7,11 @@ let Body = React.createClass({
     $.getJSON('/api/v1/admin/heros.json', (response) => { this.setState({ heros: response })} );
   },
 
+  handleSubmit(newHero) {
+    let newHeros = this.state.heros.concat(newHero);
+    this.setState({ heros: newHeros })
+  },
+
   handleDelete(hero) {
     $.ajax({
       url: `/api/v1/admin/heros/${hero.id}`,
@@ -45,6 +50,7 @@ let Body = React.createClass({
   render() {
     return (
       <div>
+        <NewHero handleSubmit={this.handleSubmit} />
         <AllHeros heros={this.state.heros} handleDelete={this.handleDelete} handleEdit={this.onUpdate} />
       </div>
     )
