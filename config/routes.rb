@@ -14,11 +14,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :cart_powers, only: [:create]
       namespace :admin do
         resources :heros
       end
     end
   end
+
+  resources :cart, only: [:show]
 
   resources :powers, only: [:index, :show, :update]
   get '/login' => 'sessions#new'
